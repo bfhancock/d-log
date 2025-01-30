@@ -11,6 +11,11 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "dlog-orange": "#EB5E28",
+        "dlog-darkgray": "#252422",
+        "dlog-gray": "#403D39",
+        "dlog-lightgray": "#CCC5B9",
+        "dlog-cream": "#FFFCF2",
       },
     },
   },
