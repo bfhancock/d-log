@@ -10,7 +10,7 @@ const Home = () => {
       <Header />
       <div className="w-full max-w-[1340px] flex justify-between mt-[100px] p-5">
         <RenderPosts posts={posts} />
-        <div className="border border-dlog-lightgray rounded-[15px] min-w-[225px]">
+        <div className="border border-dlog-lightgray rounded-[15px] min-w-[225px] flex justify-center items-center">
           Hello bengk
         </div>
       </div>

@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
       fs: false,
     };
   },
+  experimental: { esmExternals: true },
 };
 
 export default nextConfig;
