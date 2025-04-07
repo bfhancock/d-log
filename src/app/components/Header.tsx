@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import HeaderLogo from "./HeaderLogo";
 
 const Header = () => {
@@ -7,7 +8,9 @@ const Header = () => {
       <div className="bg-dlog-darkgray w-full mx-auto h-[100px] rounded-full flex absolute -z-10 group-hover:-translate-y-[2px] group-hover:shadow-xl duration-300 justify-between items-center pl-[75px] pr-[50px]">
         <HeaderLogo />
 
-        <p className="text-4xl font-semibold text-dlog-orange">D-Log</p>
+        <Link href="/" className="text-4xl font-semibold text-dlog-orange">
+          D-Log
+        </Link>
 
         <a className="z-50" href="/newPost">
           Thing

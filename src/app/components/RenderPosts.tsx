@@ -1,30 +1,32 @@
 "use client";
-
+import FilterDate from "../../../lib/filterDate";
 import { motion, AnimatePresence } from "motion/react";
 
 const RenderPosts: React.FC<{
-  posts: { id: string; content: string; date: string; title: string }[];
+  posts: { id: string; content: string; created_at: string; title: string }[];
 }> = ({ posts }) => {
   const data = posts;
 
   return (
-    <div className="w-full flex justify-start gap-[25px]">
+    <div className="w-full max-w-[1025px] flex flex-wrap justify-start gap-[25px]">
       <AnimatePresence>
         {data.map((post, i) => {
+          const date = FilterDate(post.created_at);
+
           return (
             <motion.a
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: i * 0.2 }}
               key={post.id}
-              href={`/blog/${post.id}`}
+              href={`/blog/${post.title}`}
               className="relative group"
             >
               <div className="w-[500px] h-[75px] rounded-[15px] bg-dlog-darkgray p-2.5 flex flex-col items-center justify-between relative z-10 border border-dlog-lightgray transition-all duration-300 ease-in-out group-hover:shadow-xl">
                 <p className="text-dlog-orange font-medium">{post.title}</p>
                 <div className="w-full flex justify-end items-center">
                   <p className="text-xs leading-none text-dlog-lightgray">
-                    {post.date}
+                    {date}
                   </p>
                 </div>
               </div>
